@@ -27,7 +27,7 @@
   </header>
 
   <main class="cadastro">
-    <form id="" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
+    <form id="formulario-cadastro" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
       
       <div>
           <label>nome da instituição</label>
@@ -42,7 +42,7 @@
          
         <section> 
           <label>telefone</label>
-          <input id="telefone-doador" type="tel" name="telefone" placeholder="(00) 0000-0000" required>
+          <input id="telefone" type="tel" name="telefone" placeholder="(00) 0000-0000" required>
         </section>
       </div>
 
@@ -62,43 +62,43 @@
         <section id="cep">
           <label>CEP</label>
             <div id="cepBusca">
-              <input  name="cep" type="text" id="cep-doador" value="" required size="5"  />
+              <input  name="cep" type="text" id="cep-banco" value="" required size="5"  />
               <button>buscar</button>
             </div>
         </section>
 
         <section id="endereco">
           <label>endereço</label>
-          <input  name="rua" type="text" id="rua-doador" required size="25" />
+          <input  name="rua" type="text" id="rua" required size="25" />
         </section>
       </div>
           
       <div class="dados">
         <section id="numero">
           <label >número</label>
-          <input type="text" id="numero-doador" name="numero" required>
+          <input type="text" id="numero-banco" name="numero" required>
         </section>
 
         <section id="complemento">
           <label>complemento</label>
-          <input type="text" id="complemento-doador" name="complemento">
+          <input type="text" id="complemento-banco" name="complemento">
         </section>
 
         <section>
           <label>bairro</label>
-          <input  name="bairro" type="text" id="bairro-doador" required />
+          <input  name="bairro" type="text" id="bairro" required />
         </section>
       </div>
     
       <div class="dados">
         <section>
           <label>cidade</label>
-          <input name="cidade" type="text" id="cidade-doador" required/>
+          <input name="cidade" type="text" id="cidade" required/>
         </section>
 
         <section>
           <label>estado</label>
-          <select id="uf-doador" name="estado" required>
+          <select id="uf" name="uf" required>
             <option value=""></option>
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
@@ -139,7 +139,7 @@
       <div class="dados">
         <section>
           <label>email</label>
-          <input class="textboxG" id="emailContato" type="email" name="emailcontato" placeholder="maria@bancodesangue.gov.br">
+          <input class="textboxG" id="emailcontato" type="email" name="emailcontato" placeholder="maria@bancodesangue.gov.br">
         </section>
 
         <section id="telefoneContato">
@@ -217,8 +217,10 @@
 
 
 
+  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>    
   <script src="js/home.js"></script>
   <script src="js/cadastro.js"></script>
+  <script src="js/integracao-banco.js"></script>
 
 </body>
 </html>
