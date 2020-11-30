@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doeamor</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel='stylesheet prefetch' href='https://foliotek.github.io/Croppie/croppie.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/styleboot.css">
+</head>
+<body>
+  <!-- barra de navegação -->
+  <header id="navbar" >
+    <div id="navbarMenu">
+      <a href="home.html">home</a>
+      <a href="">quem somos</a>
+      <a href="onde-doar.html">onde doar</a>
+      <div id="navbarBtns">
+        <button id="cadastroBtn" >cadastra-se</button>
+        <button id="loginBtn">login</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cadastro">
+    <div class="pessoaTipo">
+      <button class="tablinks" onclick="abrirForm(event, 'pessoaFisica')" id="defaultOpen">pessoa física</button>
+      <button class="tablinks" onclick="abrirForm(event, 'pessoaJuridica')">pessoa juridica</button>
+    </div>
+    
+    <div id="pessoaFisica" class="tabcontent">
+      <form id="form-cadastro-doador" method="POST" action="" enctype="multipart/form-data">
+
+        <div class="container silhuette">
+          <div class="row">
+            <img id="logo" class="cadphoto" src="img/silhueta.png">
+            <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
+            <label for="imagem" class="photos" name="imagem"><img src="./img/btngotasilhueta.png"></label>
+          </div>
+        </div>
+
+        <div>
+          <label>nome</label>
+          <input id="nome-doador" type="text" name="nome" placeholder="" required>
+        </div>
+            
+        <div class="dados">
+            <section>
+              <label>CPF</label>
+              <input id="cpf-doador" type="text" name="cpf" placeholder="000.000.000-00" required>
+            </section>
+  
+            <section>
+              <label>RG</label>
+              <input id="rg-doador" type="text" name="rg" placeholder="000.000.000-00" required>
+            </section>
+        </div>
+  
+        <div class="dados">
+          <section id="data">
+            <label>data de nascimento</label>
+            <input id="dt-nasc-doador"  type="date" name="dataNascimento" required>
+          </section>
+  
+          <section>
+            <label>sexo</label>
+            <div id="generoOpcao">
+              <input type="radio" name="gender" value="masculino">masculino
+              <input type="radio" name="gender" value="feminino">feminino
+            </div>
+          </section>
+        </div>
+  
+        <div class="dados"> 
+          <section id="telefone"> 
+            <label>telefone</label>
+            <input id="telefone-doador" type="tel" name="telefone" required>
+          </section>
+  
+          <section>
+            <label>email</label>
+            <input id="email-doador" type="email" name="email" placeholder="email@email.com"required> 
+          </section>
+  
+          <section id="senhaForm">
+            <label>senha</label>
+            <input id="senha-doador" type="password" name="senha" required>
+          </section>
+        </div>
+  
+        <div class="dados">
+          <section id="cep">
+            <label>CEP</label>
+              <div id="cepBusca">
+                <input  name="cep" type="text" id="cep-doador" value="" required size="5"  />
+                <button>buscar</button>
+              </div>
+          </section>
+  
+          <section id="endereco">
+            <label>endereço</label>
+            <input  name="rua" type="text" id="rua-doador" required size="25" />
+          </section>
+        </div>
+            
+        <div class="dados">
+          <section id="numero">
+            <label >número</label>
+            <input type="text" id="numero-doador" name="numero" required>
+          </section>
+  
+          <section id="complemento">
+            <label>complemento</label>
+            <input type="text" id="complemento-doador" name="complemento">
+          </section>
+  
+          <section>
+            <label>bairro</label>
+            <input  name="bairro" type="text" id="bairro-doador" required />
+          </section>
+        </div>
+      
+        <div class="dados">
+          <section>
+            <label>cidade</label>
+            <input name="cidade" type="text" id="cidade-doador" required/>
+          </section>
+  
+          <section>
+            <label>estado</label>
+            <select id="uf-doador" name="estado" required>
+              <option value=""></option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </section>
+        </div>
+  
+        <p>escolha o seu tipo sanguíneo</p>
+        <div class="doadorSangue">
+          <section>
+            <ul class="tiposSanguineos">
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo" type="radio" value="0"  id="APositivo">
+                <label for="APositivo">A+</label>
+              </li>
+            
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo"  type="radio" id="ANegativo">
+                <label for="ANegativo">A-</label>
+              </li>
+            
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo"  type="radio" id="BPositivo">
+                <label for="BPositivo">B+</label>
+              </li>
+            
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo"  type="radio" id="BNegativo">
+                <label for="BNegativo">B-</label>
+              </li>
+              
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo"  type="radio" id="ABPositivo">
+                <label for="ABPositivo">AB+</label>
+              </li>
+            
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo"  type="radio" id="ABNegativo">
+                <label for="ABNegativo">AB-</label>
+              </li>
+            
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo"  type="radio" id="OPositivo">
+                <label for="OPositivo">O+</label>
+              </li>
+            
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo" type="radio" id="ONegativo">
+                <label for="ONegativo">O-</label>
+              </li>
+
+              <li class="tipo_sanguineo">
+                <input name="tipo_sanguineo" type="radio" id="naoSei">
+                <label for="naoSei">não sei</label>
+              </li>
+            </ul>
+          </section>
+        </div>
+  
+        <section class="cadastroBtn">
+          <button id="btnDoador" type="submit" name="enviar">cadastrar</button>
+        </section>
+      </form>
+    </div>
+    
+    <div id="pessoaJuridica" class="tabcontent">
+      <form id="cadastroDoador" method="POST" action="" enctype="multipart/form-data">
+      
+        <div>
+            <label>razão social</label>
+            <input id="razao-social" type="text" name="nome" placeholder="">
+        </div>
+  
+        <div class="dados">
+          <section id="cnpj">
+            <label>CNPJ</label>
+            <input id="cnpj" type="text" name="cnpj" placeholder="11.111.111/1111-11">
+          </section>
+           
+          <section id="ie"> 
+            <label>I.E</label>
+            <input id="ie" type="text" placeholder="">
+          </section>
+  
+          <section id="dataFundacao"> 
+            <label>data da fundação</label>
+            <input id="fundacao" type="date" name="dataFundacao">
+          </section>
+        </div>
+  
+        <div class="dados"> 
+          <section>
+            <label>email institucional</label>
+            <input id="email-empresa" type="email" name="emailEmpresa" placeholder="empresa@empresa.com">
+          </section>
+  
+          <section>
+            <label>senha</label>
+            <input class="textboxG" id="senha" type="password" name="senha" required>
+          </section>
+        </div>
+  
+        <p>quantidade de colaboradores</p>
+        <div class="empresaColabs">
+          <section>
+            <ul class="qtdColaboradores">
+              <li class="qtd_Colaboradores">
+                <input name="qtd_Colaboradores" type="radio" name="porte" value="0a50" placeholder="" id="0a50">
+                <label for="0a50">0 a 50</label>
+              </li>
+            
+              <li class="qtd_Colaboradores">
+                <input name="qtd_Colaboradores" type="radio" name="porte" value="51a100" placeholder="" id="51a200">
+                <label for="51a200">51 a 200</label>
+              </li>
+  
+              <li class="qtd_Colaboradores">
+                <input name="qtd_Colaboradores" type="radio" name="porte" value="51a100" placeholder="" id="201a500">
+                <label for="201a500">201 a 500</label>
+              </li>
+            
+              <li class="qtd_Colaboradores">
+                <input name="qtd_Colaboradores" type="radio" name="porte" value="501a1000" placeholder="" id="501a1000">
+                <label for="501a1000">501 a 1000</label>
+              </li>
+  
+              <li class="qtd_Colaboradores">
+                <input name="qtd_Colaboradores" type="radio" name="porte" value="0a50" placeholder="" id=">1000">
+                <label for=">1000">> 1000</label>
+              </li>
+            </ul>
+          </section>
+  
+        <div class="dados">
+          <section id="cep">
+            <label>CEP</label>
+              <div id="cepBusca">
+                <input  name="cep" type="text" id="cep-doador" value="" required size="5"  />
+                <button>buscar</button>
+              </div>
+          </section>
+  
+          <section id="endereco">
+            <label>endereço</label>
+            <input  name="rua" type="text" id="rua-doador" required size="25" />
+          </section>
+        </div>
+            
+        <div class="dados">
+          <section id="numero">
+            <label >número</label>
+            <input type="text" id="numero-doador" name="numero" required>
+          </section>
+  
+          <section id="complemento">
+            <label>complemento</label>
+            <input type="text" id="complemento-doador" name="complemento">
+          </section>
+  
+          <section>
+            <label>bairro</label>
+            <input  name="bairro" type="text" id="bairro-doador" required />
+          </section>
+        </div>
+      
+        <div class="dados">
+          <section>
+            <label>cidade</label>
+            <input name="cidade" type="text" id="cidade-doador" required/>
+          </section>
+  
+          <section>
+            <label>estado</label>
+            <select id="uf-doador" name="estado" required>
+              <option value=""></option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </section>
+        </div>
+  
+        <section class="cadastroBtn">
+          <button type="submit" name="enviar">cadastrar</button>
+        </section>
+      </form>
+    </div>
+    
+    <!-- modais -->
+    <!-- modal para realizar o cadastro de doador ou de banco de sangue -->
+    <div id="modalCadastro">
+      <div class="modal-content">
+        <span class="fecharModal">&times;</span>
+  
+        <div id="cadastroTipos"> 
+          <a href="cadastro-doador.html">
+            <div id="tipoDoador">
+              <span class="sou">sou</span>
+              <span>doador</span>
+            </div>
+          </a>
+        
+          <a href="cadastro-banco.html">
+            <div id="tipoBanco">
+              <span class="sou">sou</span>
+              <span>banco de sangue</span>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- modal para login de doador ou de banco de sangue -->
+    <div id="modalLogin">
+      <div class="modal-content">
+        <span class="fecharModal">&times;</span>
+
+        <div id="loginOpcao">
+          <button class="btn active">doador</button>
+          <button class="btn">banco de sangue</button>
+        </div>
+
+        <div class="formLogin display">
+          <div class="loginTitulo">já agendou a sua próxima doação?</div>
+          <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
+          <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
+          <div class="senha">esqueceu a senha?</div>
+          
+          <button class="btn_enviar" type="submit" name="enviar">login</button>
+
+          <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+          <div class="socialLoginBtn">
+            <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+            <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        
+        <div class="formLogin">
+          <div class="loginTitulo">já verificou o seu estoque hoje?</div>
+
+          <input id="email_doador" type="email" placeholder="email" name="email_banco" value="" required />
+          <input  id="senha_doador" type="password" placeholder="senha" name="senha_doador" value="" required />
+          <div class="senha">esqueceu a senha?</div>
+
+          <button class="loginBtn" type="submit" name="enviar">login</button>
+
+          <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+          <div class="socialLoginBtn">
+            <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+            <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+  <script src="js/home.js"></script>
+  <script src="js/cadastro.js"></script>
+
+</body>
+</html>

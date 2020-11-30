@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doeamor</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<!-- barra de navegação -->
+<header id="navbar" >
+  <div id="navbarMenu">
+    <a href="home.html">home</a>
+    <a href="">quem somos</a>
+    <a href="onde-doar.html">onde doar</a>
+    <div id="navbarBtns">
+      <button id="cadastroBtn" >cadastra-se</button>
+      <button id="loginBtn">login</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section> 
+    <h1></h1>
+  </section>
+
+  <section>
+   
+  </section>
+  <section>
+   
+  </section>
+ <!-- modais -->
+ <!-- modal para realizar o cadastro de doador ou de banco de sangue -->
+  <div id="modalCadastro">
+    <div class="modal-content">
+      <span class="fecharModal">&times;</span>
+
+      <div id="cadastroTipos"> 
+        <a href="cadastro-doador.html">
+          <div id="tipoDoador">
+            <span class="sou">sou</span>
+            <span>doador</span>
+          </div>
+        </a>
+      
+        <a href="cadastro-banco.html">
+          <div id="tipoBanco">
+            <span class="sou">sou</span>
+            <span>banco de sangue</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal para login de doador ou de banco de sangue -->
+  <div id="modalLogin">
+    <div class="modal-content">
+      <span class="fecharModal">&times;</span>
+
+      <div id="loginOpcao">
+        <button class="btn active">doador</button>
+        <button class="btn">banco de sangue</button>
+      </div>
+
+      <div class="formLogin display">
+        <div class="loginTitulo">já agendou a sua próxima doação?</div>
+        <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
+        <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
+        <div class="senha">esqueceu a senha?</div>
+        
+        <button class="btn_enviar" type="submit" name="enviar">login</button>
+
+        <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+        <div class="socialLoginBtn">
+          <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      
+      <div class="formLogin">
+        <div class="loginTitulo">já verificou o seu estoque hoje?</div>
+
+        <input id="email_doador" type="email" placeholder="email" name="email_banco" value="" required />
+        <input  id="senha_doador" type="password" placeholder="senha" name="senha_doador" value="" required />
+        <div class="senha">esqueceu a senha?</div>
+
+        <button class="loginBtn" type="submit" name="enviar">login</button>
+
+        <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+        <div class="socialLoginBtn">
+          <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <script src="js/home.js"></script>
+  </body>
+</html>
