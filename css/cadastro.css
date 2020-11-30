@@ -14,6 +14,7 @@ label {
 }
 
 p{
+    font-family: 'Paytone One';
     color:#575656;
     font-size: 18px;
 }
@@ -68,7 +69,7 @@ select{width: 70%;}
 }
 
 /*estilização do cadastro de doador (pessoa física)*/
-#form-cadastro-doador{
+.cadastroForm{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -195,12 +196,10 @@ label[for=naoSei]{
 
 
 .pessoaTipo {
-
     overflow: hidden;
     width:55%;
     margin: auto;
     top: 50px;
-
 }
 
 .pessoaTipo button {
