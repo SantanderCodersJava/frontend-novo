@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doeamor</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<!-- barra de navegação -->
+<header id="navbar" >
+  <div id="navbarMenu">
+      <a href="home.html">home</a>
+      <a href="onde-doar.html">onde doar</a>
+      <div id="navbarBtns">
+      <button id="cadastroBtn" >cadastra-se</button>
+      <button id="loginBtn">login</button>
+      </div>
+  </div>
+  </header>
+
+
+<main>
+  <main role="main">
+    <!-- Envolve o resto da página em outro container, para centralizar todo o conteúdo. -->
+       <div class="content">
+           
+         <div class="mapa-form">
+           <div id="mapa" ></div>
+ 
+           <div>
+             <form id="form-locais-mapa" action="">
+               <select name="uf" id="uf">
+                 <option value="SP">SP</option>
+                 <option value="RJ">RJ</option>
+                 <option value="MG">MG</option>
+               </select>
+               <select name="cidade" id="cidade">
+                 <option value="São Paulo">São Paulo</option>
+                 <option value="Rio de Janeiro">Rio de Janeiro</option>
+                 <option value="Minas Gerais">Minas Gerais</option>
+               </select>
+               <input type="submit" value="Buscar">
+             </form>
+             <div>
+               <img src="./img/mapasilhueta.svg" alt="" srcset="">
+             </div>
+           </div>
+             
+         </div>
+         <div>
+ 
+           <form id="pesquisar-banco" class="d-flex  justify-content-around">
+             <input placeholder="Search" type="search" id="input-procurar" > 
+             <input value="" type="submit" id="procurar-nome-banco" alt="" srcset="">
+           </form>
+ 
+           <table>
+             <thead>
+               <tr>
+                 <th>Nome do banco de sangue</th>
+                 <th>Rua</th>
+                 <th>Bairro</th>
+                 <th>Numero</th>
+                 <th>Agendar</th>
+               </tr>          
+             </thead>
+             <tbody id="conteudo-tabela">
+                      
+             </tbody>
+           </table>
+ 
+         </div>
+       </div>
+   </main>
+   
+  </section>
+ <!-- modais -->
+ <!-- modal para realizar o cadastro de doador ou de banco de sangue -->
+  <div id="modalCadastro">
+    <div class="modal-content">
+      <span class="fecharModal">&times;</span>
+
+      <div id="cadastroTipos"> 
+        <a href="cadastro-doador.html">
+          <div id="tipoDoador">
+            <span class="sou">sou</span>
+            <span>doador</span>
+          </div>
+        </a>
+      
+        <a href="cadastro-banco.html">
+          <div id="tipoBanco">
+            <span class="sou">sou</span>
+            <span>banco de sangue</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal para login de doador ou de banco de sangue -->
+  <div id="modalLogin">
+    <div class="modal-content">
+      <span class="fecharModal">&times;</span>
+
+      <div id="loginOpcao">
+        <button class="btn active">doador</button>
+        <button class="btn">banco de sangue</button>
+      </div>
+
+      <div class="formLogin display">
+        <div class="loginTitulo">já agendou a sua próxima doação?</div>
+        <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
+        <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
+        <div class="senha">esqueceu a senha?</div>
+        
+        <button class="btn_enviar" type="submit" name="enviar">login</button>
+
+        <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+        <div class="socialLoginBtn">
+          <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      
+      <div class="formLogin">
+        <div class="loginTitulo">já verificou o seu estoque hoje?</div>
+
+        <input id="email_doador" type="email" placeholder="email" name="email_banco" value="" required />
+        <input  id="senha_doador" type="password" placeholder="senha" name="senha_doador" value="" required />
+        <div class="senha">esqueceu a senha?</div>
+
+        <button class="loginBtn" type="submit" name="enviar">login</button>
+
+        <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+        <div class="socialLoginBtn">
+          <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <script src="js/home.js"></script>
+  </body>
+</html>

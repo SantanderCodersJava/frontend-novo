@@ -1,0 +1,222 @@
+/*estilização geral*/
+form{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    margin: auto;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+label {
+    color:#575656;
+}
+
+p{
+    color:#575656;
+    font-size: 18px;
+}
+.cadastro{
+    top:80px;
+    position: relative;
+    height: 100vh;
+}
+.dados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    padding-top: 30px;
+}
+
+.dados section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1ch;
+
+    width:45%;
+    padding-top:5px;
+}
+
+#cepBusca{display: flex;}
+
+#cepBusca button{
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+#senhaForm, #telefone{width: 24%;}
+
+#numero{width: 8%;}
+
+#endereco{width: 50%;}
+
+#bairro, #complemento{width: 35%;}
+
+select{width: 70%;}
+
+.cadastroBtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.cadastroBtn button{
+    border-radius: 30px;
+}
+
+/*estilização do cadastro de doador (pessoa física)*/
+#form-cadastro-doador{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 50vw;
+    height: 90vh;
+    margin: auto;
+
+    padding: 5px;
+    top:20px;
+}
+
+.fotoCadastro{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1px solid #EE0909;
+}
+
+#generoOpcao{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    position: relative;
+    top:-10px;
+
+    color: #575656;
+}
+
+/*estilização do select do tipo sanguineo do doador*/
+.tiposSanguineos, .qtdColaboradores {
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 0px 10px 0 10px; /* topo | direita | inferior | esquerda */
+}
+ 
+.tipo_sanguineo {
+    background-color: #DD0122;
+
+    border: .1px solid #DD0122;
+    border-radius: 50%;
+  
+    box-sizing: border-box;
+    position: relative;
+
+    height: 65px;
+    width: 65px;
+    margin-top: -15px;
+}
+
+.tipo_sanguineo label {
+    background: #FFFF no-repeat center center;
+
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+
+    border-radius: 50%;
+    padding-top: 14px;
+    text-align: center;
+ 
+    color:#DD0122;
+    font-size: 20px; 
+}
+
+.tipo_sanguineo input:checked + label {
+    background-color:#DD0122;
+    color: #FFFF;
+}
+
+label[for=naoSei]{
+    line-height: .8em;
+}
+
+#cargoContato, #telefoneContato{width: 24%;}
+
+/*estilização do select da quantidade de colaboradores da empresa*/
+.qtd_Colaboradores{
+    background-color: #DD0122;
+
+    border: .1px solid #DD0122;
+  
+    box-sizing: border-box;
+    position: relative;
+
+    height: 50px;
+    width: 140px;
+}
+
+.qtd_Colaboradores label{
+    background: #FFFF no-repeat center center;
+
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+
+    padding-top: 10px;
+    text-align: center;
+ 
+    color:#DD0122;
+    font-size: 19px; 
+}
+
+.qtd_Colaboradores input:checked + label {
+    background-color:#DD0122;
+    color: #FFFF;
+}
+
+#dataFundacao{width: 40%;}
+
+#cnpj, #ie{width: 70%;}
+
+
+.pessoaTipo {
+
+    overflow: hidden;
+    width:55%;
+    margin: auto;
+    top: 50px;
+
+}
+
+.pessoaTipo button {
+    background-color: #747272;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+}
+
+.pessoaTipo button.active {
+    background-color: #DD0122;
+}
+
+.tabcontent {
+    width:54%;
+    margin: auto;
+    display: none;
+    height: 1000px;
+}
