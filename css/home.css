@@ -139,25 +139,19 @@ h1{
 }
 
 .doeVida{
-  position: relative;
+  display: flex;
   width: 100%;
   background-color:rgb(197, 26, 44);
 
-
-  align-items: flex-start;
   height: 14%;
 }
 
 h2{
-  position: relative;
-  top:-15px;
-  left: -20px;
-
   color: #ffff;
-  font-size: 100px;
-
-  text-align: end;
   text-transform: uppercase;
+  font-size: 50px;
+
+  align-self: flex-start;
 }
 
 .projetoInfo{
@@ -167,7 +161,6 @@ h2{
   flex-direction: row;
   justify-content: space-evenly;
   position: relative;
-
 }
 
 .projetoInfo div{
@@ -200,7 +193,6 @@ p{
   position: relative;
   background-size: cover;
   
-
   width: 100%;
 }
 
@@ -241,8 +233,8 @@ footer{
   height: 100%; 
   overflow: auto;
 
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
 }
 
 #modalCadastro a{
@@ -251,6 +243,7 @@ footer{
 
 .modal-content {
   background-color: rgb(255, 255, 255);
+  border-radius: 15px;
   margin: auto;
   padding: 20px;
 
@@ -298,8 +291,8 @@ footer{
   height: 100%; 
   overflow: auto; 
 
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
 }
 
 /* estilo dos botões para escolher o tipo de login */
@@ -315,6 +308,10 @@ footer{
 }
 
 #loginOpcao button.active {
+  border-bottom: 2px solid #DD0122;
+}
+
+#loginOpcao button.hoover {
   border-bottom: 2px solid #DD0122;
 }
 
@@ -379,7 +376,6 @@ div.socialTitulo {
   font-size: 16px;
   color: #575656;
   letter-spacing: 0;
-  
 }
 
 .socialLoginBtn button {
