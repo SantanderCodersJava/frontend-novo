@@ -1,27 +1,43 @@
-//UPLOAD DE ARQUIVOS
+function previewImagem(){
+    var imagem = document.querySelector('input[name=imagem]').files[0];
+    var preview = document.querySelector('#logo');
+
+    var reader = new FileReader();
+
+    reader.onloadend = function() {
+        preview.src = reader.result;
+    }
+
+    if(imagem){
+        reader.readAsDataURL(imagem);
+    }else{
+        preview.src = "../img/silhueta.png";
+    }
+}
 
 const api = axios.create({
     baseURL: "http://localhost:8080",
 })
 
-// const fileInput = document.getElementById("imagem");
+//UPLOAD DE ARQUIVOS
+const fileInput = document.getElementById("imagem");
 
-// let caminhoImg;
+let caminhoImg;
 
-// fileInput.addEventListener("change", async (event) => {
-//     const img = event.target.files[0]
+fileInput.addEventListener("change", async (event) => {
+     const img = event.target.files[0]
 
-//     const formData = new FormData()
+     const formData = new FormData()
 
-//     formData.append("file", img)
-//     try{
-//         caminhoImg = await axios.post("http://localhost:8080/storage/upload", formData)
-//         .then(res => res.data)
-//     }catch(err) {
-//         console.log(err)
-//     }
+     formData.append("file", img)
+     try{
+         caminhoImg = await axios.post("http://localhost:8080/storage/upload", formData)
+         .then(res => res.data)
+     }catch(err) {
+         console.log(err)
+     }
    
-// })
+})
 
 document.getElementById("formulario-cadastro").onsubmit = async function( event ){
 
@@ -75,7 +91,7 @@ document.getElementById("formulario-cadastro").onsubmit = async function( event 
             telefoneContato : telContato,
             cargo : cargo,
             senha : senha,
-            // caminhoImg : caminhoImg,
+            caminhoImg : caminhoImg,
         }      
     }
 

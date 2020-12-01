@@ -1,3 +1,22 @@
+function previewImagem(){
+    var imagem = document.querySelector('input[name=imagem]').files[0];
+    var preview = document.querySelector('#logo');
+
+    var reader = new FileReader();
+
+    reader.onloadend = function() {
+        preview.src = reader.result;
+    }
+
+    if(imagem){
+        reader.readAsDataURL(imagem);
+    }else{
+        preview.src = "../img/silhueta.png";
+    }
+}
+
+
+
 //Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
@@ -5,6 +24,25 @@ const api = axios.create({
     baseURL: "http://localhost:8080",
 })
 
+
+const fileInput = document.getElementById("imagem");
+
+let caminhoImg;
+
+fileInput.addEventListener("change", async (event) => {
+    const img = event.target.files[0]
+
+    const formData = new FormData()
+
+    formData.append("file", img)
+        try{
+       caminhoImg = await axios.post("http://localhost:8080/storage/upload", formData)
+         .then(res => res.data)
+     }catch(err) {
+         console.log(err)
+     }
+   
+})
 
 document.getElementById("form-cadastro-doador").onsubmit = async function( event ){
 
@@ -68,7 +106,7 @@ document.getElementById("form-cadastro-doador").onsubmit = async function( event
             sexo : opcaoSexo,
             tipoSanguineo : opcaoTipoSangue,
             senha : senha,
-            //caminhoImg : caminhoImg,
+            caminhoImg : caminhoImg,
         }
     }
 
