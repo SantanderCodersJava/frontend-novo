@@ -112,7 +112,7 @@
         <button class="btn">banco de sangue</button>
       </div>
 
-      <div class="formLogin display">
+      <div class="formLogin display" id="formDoador">
         <div class="loginTitulo">já agendou a sua próxima doação?</div>
         <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
         <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
@@ -127,11 +127,11 @@
         </div>
       </div>
       
-      <div class="formLogin">
+      <div class="formLogin" id="formBanco">
         <div class="loginTitulo">já verificou o seu estoque hoje?</div>
 
-        <input id="email_doador" type="email" placeholder="email" name="email_banco" value="" required />
-        <input  id="senha_doador" type="password" placeholder="senha" name="senha_doador" value="" required />
+        <input id="email_banco" type="email" placeholder="email" name="email_banco" value="" required />
+        <input  id="senha_banco" type="password" placeholder="senha" name="senha_banco" value="" required />
         <div class="senha">esqueceu a senha?</div>
 
         <button class="loginBtn" type="submit" name="enviar">login</button>
@@ -146,7 +146,9 @@
   </div>
 </main>
 
-  <script src="js/home.js"></script>
+  <script src="js/home.js"></script>  
+  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
+  <script src="js/integracao-login.js"></script>
   <script src="js/onde-doar.js"></script>
 </body>
 </html>

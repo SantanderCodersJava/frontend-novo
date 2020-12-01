@@ -408,35 +408,47 @@
     </div>
 
     <!-- modal para login de doador ou de banco de sangue -->
-    <div id="modalLogin">
-      <div class="modal-content">
-        <span class="fecharModal">&times;</span>
+  <div id="modalLogin">
+    <div class="modal-content">
+      <span class="fecharModal">&times;</span>
 
-        <div id="loginOpcao">
-          <button class="btn active">doador</button>
-          <button class="btn">banco de sangue</button>
-        </div>
+      <div id="loginOpcao">
+        <button class="btn active">doador</button>
+        <button class="btn">banco de sangue</button>
+      </div>
 
-        <div class="formLogin display">
-          <div class="loginTitulo">já agendou a sua próxima doação?</div>
-          <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
-          <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
-          <div class="senha">esqueceu a senha?</div>
-          
-          <button class="btn_enviar" type="submit" name="enviar">login</button>
-        </div>
+      <div class="formLogin display" id="formDoador">
+        <div class="loginTitulo">já agendou a sua próxima doação?</div>
+        <input id="email_doador" type="email" placeholder="email" name="email_doador" value="" required />
+        <input id="senha_doador" type="password"  placeholder="senha" name="senha_doador" value="" required />
+        <div class="senha">esqueceu a senha?</div>
         
-        <div class="formLogin">
-          <div class="loginTitulo">já verificou o seu estoque hoje?</div>
+        <button class="btn_enviar" type="submit" name="enviar">login</button>
 
-          <input id="email_doador" type="email" placeholder="email" name="email_banco" value="" required />
-          <input  id="senha_doador" type="password" placeholder="senha" name="senha_doador" value="" required />
-          <div class="senha">esqueceu a senha?</div>
+        <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+        <div class="socialLoginBtn">
+          <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      
+      <div class="formLogin" id="formBanco">
+        <div class="loginTitulo">já verificou o seu estoque hoje?</div>
 
-          <button class="loginBtn" type="submit" name="enviar">login</button>
+        <input id="email_banco" type="email" placeholder="email" name="email_banco" value="" required />
+        <input  id="senha_banco" type="password" placeholder="senha" name="senha_banco" value="" required />
+        <div class="senha">esqueceu a senha?</div>
+
+        <button class="loginBtn" type="submit" name="enviar">login</button>
+
+        <div class="socialTitulo"><span>ou faça login pelo:</span></div>
+        <div class="socialLoginBtn">
+          <button type="button"><i class="fa fa-google" aria-hidden="true"></i></button>
+          <button type="button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
+  </div>
 
   </main>
 
@@ -446,6 +458,7 @@
   <script src="js/home.js"></script>
   <script src="js/cadastro.js"></script>
   <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
+  <script src="js/integracao-login.js"></script>
   <script src="js/integracao-doador.js"></script>
   <script src="js/integracao-pessoa-juridica.js"></script>
 
