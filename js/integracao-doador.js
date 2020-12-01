@@ -1,4 +1,12 @@
-document.getElementById("form-cadastro-doador").onsubmit = function( event ){
+//Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+const api = axios.create({
+    baseURL: "http://localhost:8080",
+})
+
+
+document.getElementById("form-cadastro-doador").onsubmit = async function( event ){
 
     event.preventDefault();
 
@@ -28,7 +36,7 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
         }
     }
 
-    const tipoSangue = document.getElementsByName("type");
+    const tipoSangue = document.getElementsByName("tipo_sanguineo");
     let opcaoTipoSangue = '';
 
     for(let i = 0; i < tipoSangue.length; i++){
@@ -60,15 +68,13 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
             sexo : opcaoSexo,
             tipoSanguineo : opcaoTipoSangue,
             senha : senha,
-            caminhoImg : caminhoImg,
+            //caminhoImg : caminhoImg,
         }
     }
 
-    // FAÇO A REQUISIÇÃO
-    const api = axios.create({
-        baseURL: "http://localhost:8080",
-    })
 
+
+    // FAÇO A REQUISIÇÃO
     api.post("/enderecos", endereco)
     .then(res => {
         alert("Doador cadastrado com sucesso!")
@@ -78,6 +84,8 @@ document.getElementById("form-cadastro-doador").onsubmit = function( event ){
     })
 
 }
+
+
 
 
 
