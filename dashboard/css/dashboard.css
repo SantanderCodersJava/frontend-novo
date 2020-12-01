@@ -532,9 +532,11 @@ img.cadphoto{
   border-radius: 50%;
   border: 1px solid #EE0909;
 }
+/*
 input[type="file"]{
   display: none;
-}
+}*/
+
 label.photo{
       margin-top: 2%;
       margin-left: 35px;
