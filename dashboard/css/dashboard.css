@@ -553,6 +553,12 @@ label.photo{
     background-color: none;
    
 }
-#agendamentobtn{
-  
+.dataAgendamento{
+  width:200px;
+}
+.horarioAgendamento{
+  width:100px;
+}
+.localAgendamento{
+  width:65vw;
 }

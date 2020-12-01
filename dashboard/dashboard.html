@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" alt="DooAmor" href="/erika/img/nurseico.jpeg">
-  <title>DooAmorzão</title>
+  <link rel="icon" alt="DooAmor" href="../dashboard/img/nurseico.jpeg">
+  <title>DooAmor</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   <link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
@@ -29,7 +29,8 @@
 <body>
   <header id="navbar">
     <div id="navbarMenu">
-      <a href="home.html">home</a>
+      <a href="./home.html">home</a>
+      <a href="./home.html" onclick="finalizaLogin()">sair</a>
 
       <div id="navbarBtns">
 
@@ -53,7 +54,384 @@
     </div> -->
 
       <section id="boasvindas">
-        <p>Olá <label id="nomeDoador" class="nomeDoador"></label>  sua última doação foi em 00/00/0000</p>
+        <p>Olá <label id="nomeDoador" class="nomeDoador"></label>  sua última doação foi em <label id="dataDoacao" class="dataDoacao"></label></p>
+        <p>Você poderá doar novamente a partir de 00/00/0000</p>
+        <p>Ou <button id="#agendar" class="cadastroBtn" onclick="agendamento()" type="button">Agendar Doação</button> agora mesmo.</p>
+      </section>
+
+<section id="painel">
+      <p style="text-align: center;">Seu Histórico de doação está aqui</p>
+
+      <button class="accordion">Veja suas doações</button>
+      <div class="panel">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Banco de sangue</th>
+              <th>Dia</th>
+              <th>Horário</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label id="nomeBanco" nome="nomeBanco"></label></td>
+              <td> - </td>
+              <td><label id="dataDoacao" class="dataDoacao"></td>
+            </tr>
+            <tr>
+              <td><label id="nomeBanco" nome="nomeBanco"></label></td>
+              <td> - </td>
+              <td><label id="dataDoacao" class="dataDoacao"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="accordion">Atualizar Cadastro</button>
+      <div class="panel">
+    
+          <form id="form-dados-doador" method="POST" action="" enctype="multipart/form-data">
+
+            <p>dados pessoais</p>
+            <div>
+              <label>nome</label>
+              <input id="nome-doador" type="text" name="nome" placeholder="" required>
+            </div>
+
+            <div class="dados">
+              <section>
+                <label>CPF</label>
+                <input id="cpf-doador" type="text" name="cpf" placeholder="000.000.000-00" required>
+              </section>
+
+              <section>
+                <label>RG</label>
+                <input id="rg-doador" type="text" name="rg" placeholder="000.000.000-00" required>
+              </section>
+            </div>
+
+            <div class="dados">
+              <section id="data">
+                <label>data de nascimento</label>
+                <input id="dt-nasc-doador" type="date" name="dataNascimento" required>
+              </section>
+
+              <section>
+                <label>sexo</label>
+                <div id="generoOpcao">
+                  <input type="radio" name="gender" value="masculino">masculino
+                  <input type="radio" name="gender" value="feminino">feminino
+                </div>
+              </section>
+            </div>
+
+            <div class="dados">
+              <section id="telefone">
+                <label>telefone</label>
+                <input id="telefone-doador" type="tel" name="telefone" required>
+              </section>
+
+              <section>
+                <label>email</label>
+                <input id="email-doador" type="email" name="email" placeholder="email@email.com" required>
+              </section>
+
+              <section id="senhaForm">
+                <label>senha</label>
+                <input id="senha-doador" type="password" name="senha" required>
+              </section>
+            </div>
+
+            <div class="dados">
+              <section id="cep">
+                <label>CEP</label>
+                <div id="cepBusca">
+                  <input name="cep" type="text" id="cep-doador" value="" required size="5" />
+                  <button>buscar</button>
+                </div>
+              </section>
+
+              <section id="endereco">
+                <label>endereço</label>
+                <input name="rua" type="text" id="rua-doador" required size="25" />
+              </section>
+            </div>
+
+            <div class="dados">
+              <section id="numero">
+                <label>número</label>
+                <input type="text" id="numero-doador" name="numero" required>
+              </section>
+
+              <section id="complemento">
+                <label>complemento</label>
+                <input type="text" id="complemento-doador" name="complemento">
+              </section>
+
+              <section>
+                <label>bairro</label>
+                <input name="bairro" type="text" id="bairro-doador" required />
+              </section>
+            </div>
+
+            <div class="dados">
+              <section>
+                <label>cidade</label>
+                <input name="cidade" type="text" id="cidade-doador" required />
+              </section>
+
+              <section>
+                <label>estado</label>
+                <select id="uf-doador" name="estado" required>
+                  <option value=""></option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+                </select>
+              </section>
+            </div>
+
+            <p>escolha o seu tipo sanguíneo</p>
+            <div class="doadorSangue">
+              <section>
+                <ul class="tiposSanguineos">
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" value="0" id="APositivo">
+                    <label for="APositivo">A+</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="ANegativo">
+                    <label for="ANegativo">A-</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="BPositivo">
+                    <label for="BPositivo">B+</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="BNegativo">
+                    <label for="BNegativo">B-</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="ABPositivo">
+                    <label for="ABPositivo">AB+</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="ABNegativo">
+                    <label for="ABNegativo">AB-</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="OPositivo">
+                    <label for="OPositivo">O+</label>
+                  </li>
+
+                  <li class="tipo_sanguineo">
+                    <input name="tipo_sanguineo" type="radio" id="ONegativo">
+                    <label for="ONegativo">O-</label>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <section class="cadastroBtn">
+              <button type="submit" class="cadastroBtn" name="enviar">atualizar cadastro</button>
+            </section>
+          </form>
+       
+      </div>
+      <button id="agendamentobtn" class="accordion" name="agendamentobtn">Agendar</button>
+      <div class="panel">
+        <form id="form-dados-doador" method="POST" action="" enctype="multipart/form-data">
+
+     <div class="agendamento">
+      
+       <div class="calendario">Agendar sua melhor data e horário, retornaremos a confirmação do agendamento.</div>
+       <input type="date" id="dataAgendamento" class="dataAgendamento" name="dataAgendamento" min="" required>
+       <div class="horario">
+        <section>
+          <label>Horário</label>
+          <select id="horario" class="horarioAgendamento" name="hora" required>
+            <option value=""></option>
+            <option value="7">7:00</option>
+            <option value="8">8:00</option>
+            <option value="9">9:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+            <option value="12">12:00</option>
+            <option value="13">13:00</option>
+            <option value="14">14:00</option>
+            <option value="15">15:00</option>
+            <option value="16">16:00</option>
+            <option value="17">17:00</option>
+            <option value="18">18:00</option>
+            <option value="19">19:00</option>
+            <option value="20">20:00</option>
+           </select>
+        </section>
+       </div>
+       <label>Local da doação</label>&nbsp; <i class="fa fa-search"></i>
+       <div class="localAgendamento">
+        <form id="form-locais-mapa" action="">
+          <select name="cidade" id="cidade">
+            <option value="São Paulo">São Paulo</option>                
+          </select>
+          <select name="regiao" id="regiao">
+            <option value="Região Norte">Região Norte</option>
+            <option value="Região Sul">Região Sul</option>
+            <option value="Região Leste">Região Leste</option>
+            <option value="Região Oeste">Região Oeste</option>
+            <option value="Região Centro">Região Centro</option>
+          </select>
+          <div>
+            <button  id="buscarLocal" class="cadastroBtn" type="button">Buscar Local</button>
+          </div>
+<div>
+  <form id="pesquisar-banco" class="d-flex  justify-content-around">
+    <input placeholder="Search" type="search" id="input-procurar" > 
+    <input value="" type="submit" id="procurar-nome-banco" alt="" srcset="">
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do banco de sangue</th>
+        <th>Rua</th>
+        <th>Numero</th>
+        <th>Bairro</th>                 
+        <th>Agendar</th>
+      </tr>          
+    </thead>
+    <tbody id="conteudo-tabela">
+             
+    </tbody>
+  </table>
+</div>
+
+            </form>
+          </div>
+          <br /><br />      
+       <button type="submit" class="cadastroBtn" name="enviar">agendar doação</button>
+       <br /><br />
+     </div>
+
+         
+     </form>
+      </div>
+
+  </section>
+    </section>  <!--central  -->
+
+  </main>
+
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+    <script src="./js/integracao-dashboard-doador-meus-dados.js"></script>
+    <script src="./js/dashboard-doador-principal.js"></script>
+    <script>"./js/integracao-agendamento"</script>
+    <script src="js/onde-doar.js"></script>
+   
+<script>
+  function finalizaLogin(){
+    localStorage.removeItem("__login-info")
+  }
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<body>
+  <header id="navbar">
+    <div id="navbarMenu">
+      <a href="home.html">home</a>
+
+      <div id="navbarBtns">
+
+      </div>
+    </div>
+  </header>
+  <main>
+    <hr>
+    <section id="mysidenav">
+      <img id="imagem" class="silhuette" src="img/silhueta.png"> <img id="gotaDoador" class="bloodtype"
+        src="img/gotaMais.png">
+     </section>
+    <section id="central">
+    
+      <div class="container silhuette2">
+        <div class="row">
+            <img  id="img-logo" class="cadphoto">
+            <input id="imagem" type="file" name="imagem" onchange="previewImagem()" accept="image/*">
+            <label for="imagem" class="photo" name="imagem"><img src="../img/btngotasilhueta.png"></label>
+        </div>
+    </div> 
+
+      <section id="boasvindas">
+        <p>Olá <label id="nomeDoador" class="nomeDoador"></label>  sua última doação foi em <label id="dataDoacao" class="dataDoacao"></p>
         <p>Você poderá doar novamente a partir de 00/00/0000</p>
         <p>Ou <button id="#agendar" class="cadastroBtn" onclick="agendamento()" type="button">Agendar Doação</button> agora mesmo.</p>
       </section>
@@ -304,7 +682,7 @@
 
 
   </section>
-    </section>  <!--central  -->
+    </section>  
 
   </main>
 
@@ -333,10 +711,6 @@
    
    
 <script>
-  function agendamento(){
-  }
-</script>
-
-</body>
+</body> -->
 
 </html>
