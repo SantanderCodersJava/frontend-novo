@@ -1,3 +1,4 @@
+
 let mySidenav = document.getElementById("mySidenav");
 let principal = document.querySelector(".principal");
 

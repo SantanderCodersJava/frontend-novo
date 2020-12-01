@@ -37,7 +37,8 @@ try{
   document.getElementById("nomeDoador").innerText = usuario.nome;
   document.getElementById("nome-doador").value = usuario.nome;
   document.getElementById("rg-doador").value = usuario.rg;
-  document.getElementById("dt-nasc-doador").value = usuario.dataNascimento;
+  document.getElementById("dt-nasc-doador").value = (new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'})
+    .format( new Date (usuario.dataNascimento) ));
   document.getElementById("email-doador").value = usuario.email;
   document.getElementById("cpf-doador").value = usuario.cpf;
   document.getElementById("telefone-doador").value = usuario.telefone;
@@ -58,26 +59,60 @@ try{
     }
   }
 
+  // SETA A FOTO DO DOADOR
+  const imgLogo = document.getElementById("imagem")
+  imgLogo.setAttribute("src", usuario.caminhoImg )
+
+  //SETANDO A IMAGEM DE TIPO SANGUINEO ACORDO COM O TIPO DO DOADOR
+  const imgTipoSangue = document.getElementById("gotaDoador");
+   
+  const tipoSangue = usuario.tipoSanguineo;
+
+  switch(tipoSangue) {
+    case 'APOSITIVO': 
+      imgTipoSangue.setAttribute("src", '../img/Apositive.png')
+      break;
+
+    case 'ANEGATIVO':
+      imgTipoSangue.setAttribute("src", '../img/Anegative.png')
+      break;
+
+    case 'BPOSITIVO':
+      imgTipoSangue.setAttribute("src", '../img/Bpositive.png')
+      break;
+
+    case 'BNEGATIVO':
+      imgTipoSangue.setAttribute("src", '../img/Bnegative.png')
+      break;
+
+    case 'ABPOSITIVO':
+      imgTipoSangue.setAttribute("src", '../img/ABpositive.png')
+      break;
+
+    case 'ABNEGATIVO':
+      imgTipoSangue.setAttribute("src", '../img/ABnegative.png')
+      break;
+
+    case 'OPOSITIVO':
+      imgTipoSangue.setAttribute("src", '../img/Opositive.png')
+      break;
+      
+    case 'ONEGATIVO':
+      imgTipoSangue.setAttribute("src", '../img/Onegative.png')
+      break;
+
+    default:
+      imgTipoSangue.setAttribute("src", '../img/nao-sei.png')
+  }
+
+
+   
+
 }catch(err) {
   console.log(err)
 }
 
 }
 
-function previewImagem(){
-  var imagem = document.querySelector('input[name=imagem]').files[0];
-  var preview = document.querySelector('#logo');
 
-  var reader = new FileReader();
-
-  reader.onloadend = function() {
-      preview.src = reader.result;
-  }
-
-  if(imagem){
-      reader.readAsDataURL(imagem);
-  }else{
-      preview.src = "../img/silhueta.png";
-  }
-}
 

@@ -108,8 +108,8 @@ input, select {
   height: 90px;
 }
 .bloodtype{
-  width: 35px;
-  height: 45px;
+  width: 45px;
+  height: 55px;
 }
 .historicodoador{
  
@@ -553,6 +553,7 @@ label.photo{
     background-color: none;
    
 }
+/*
 #agendamentobtn{
   
-}
+}*/
