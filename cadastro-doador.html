@@ -32,6 +32,12 @@
       <button class="tablinks" onclick="abrirForm(event, 'pessoaJuridica')">pessoa juridica</button>
     </div>
     
+    <div class="silhuette">
+      <img id="logo" class="cadphoto" src="img/silhueta.png">
+      <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
+      <label for="imagem" class="photo" name="imagem">Foto</label>
+    </div>
+
     <div id="pessoaFisica" class="tabcontent">
       <form id="form-cadastro-doador" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
         <div>
@@ -214,91 +220,91 @@
     </div>
     
     <div id="pessoaJuridica" class="tabcontent">
-      <form id="cadastroDoador" method="POST" action="" enctype="multipart/form-data">
+      <form id="cadastroEmpresa" method="POST" action="" enctype="multipart/form-data">
       
         <div>
-            <label>razão social</label>
+            <label>Razão social</label>
             <input id="razao-social" type="text" name="nome" placeholder="">
         </div>
   
         <div class="dados">
           <section id="cnpj">
             <label>CNPJ</label>
-            <input id="cnpj" type="text" name="cnpj" placeholder="11.111.111/1111-11">
+            <input id="cnpj-empresa" type="text" name="cnpj" placeholder="11.111.111/1111-11">
           </section>
            
           <section id="ie"> 
             <label>I.E</label>
-            <input id="ie" type="text" placeholder="">
+            <input id="ie-empresa" type="text" placeholder="">
           </section>
   
           <section id="dataFundacao"> 
-            <label>data da fundação</label>
-            <input id="fundacao" type="date" name="dataFundacao">
+            <label>Data da fundação</label>
+            <input id="fundacao-empresa" type="date" name="dataFundacao">
           </section>
         </div>
   
         <div class="dados"> 
           <section>
-            <label>email institucional</label>
+            <label>Email institucional</label>
             <input id="email-empresa" type="email" name="emailEmpresa" placeholder="empresa@empresa.com">
           </section>
-  
+          
           <section>
-            <label>senha</label>
-            <input class="textboxG" id="senha" type="password" name="senha" required>
+            <label>Senha</label>
+            <input class="textboxG" id="senha" type="password" name="senha">
           </section>
         </div>
 
-        <p>dados para contato</p>
+        <p>Dados para contato</p>
         <div>
-          <label>nome</label>
-          <input id="contato" type="text" name="contato"  required>
+          <label>Nome</label>
+          <input id="contato-empresa" type="text" name="contato"  required>
         </div>
         
         <div class="dados">
           <section>
-            <label>email</label>
-            <input id="emailContato" type="email" name="emailcontato" placeholder="maria@empresa.br">
+            <label>Email</label>
+            <input id="emailContatoEmpresa" type="email" name="emailcontato" placeholder="maria@empresa.br">
           </section>
   
           <section id="telefoneContato">
-            <label>telefone</label>
-            <input id="telefonecontato" type="text" name="telefonecontato" placeholder="(00) 0000-0000" required>
+            <label>Telefone</label>
+            <input id="telefoneContatoEmpresa" type="text" name="telefonecontato" placeholder="(00) 0000-0000" required>
           </section>
   
           <section id="cargoContato">
-            <label>cargo</label>
-            <input class="textboxG" id="cargo" type="text" name="cargo">
+            <label>Cargo</label>
+            <input class="textboxG" id="cargoEmpresa" type="text" name="cargo">
           </section>
         </div>
   
-        <p>quantidade de colaboradores</p>
+        <p>Quantidade de colaboradores</p>
         <div class="empresaColabs">
           <section>
             <ul class="qtdColaboradores">
               <li class="qtd_Colaboradores">
-                <input name="qtd_Colaboradores" type="radio" name="porte" value="0a50" placeholder="" id="0a50">
+                <input name="qtd_Colaboradores" type="radio" value="0a50" placeholder="" id="0a50">
                 <label for="0a50">0 a 50</label>
               </li>
             
               <li class="qtd_Colaboradores">
-                <input name="qtd_Colaboradores" type="radio" name="porte" value="51a100" placeholder="" id="51a200">
+                <input name="qtd_Colaboradores" type="radio" value="51a100" placeholder="" id="51a200">
                 <label for="51a200">51 a 200</label>
               </li>
   
               <li class="qtd_Colaboradores">
-                <input name="qtd_Colaboradores" type="radio" name="porte" value="51a100" placeholder="" id="201a500">
+                <input name="qtd_Colaboradores" type="radio" value="51a100" placeholder="" id="201a500">
                 <label for="201a500">201 a 500</label>
               </li>
             
               <li class="qtd_Colaboradores">
-                <input name="qtd_Colaboradores" type="radio" name="porte" value="501a1000" placeholder="" id="501a1000">
+                <input name="qtd_Colaboradores" type="radio" value="501a1000" placeholder="" id="501a1000">
                 <label for="501a1000">501 a 1000</label>
               </li>
   
               <li class="qtd_Colaboradores">
-                <input name="qtd_Colaboradores" type="radio" name="porte" value="0a50" placeholder="" id=">1000">
+                <input name="qtd_Colaboradores" type="radio" value="0a50" placeholder="" id=">1000">
                 <label for=">1000">> 1000</label>
               </li>
             </ul>
@@ -308,43 +314,43 @@
           <section id="cep">
             <label>CEP</label>
               <div id="cepBusca">
-                <input  name="cep" type="text" id="cep-doador" value="" required size="5"  />
-                <button>buscar</button>
+                <input  name="cep" type="text" id="cep-empresa" value="" required size="5"  />
+                <button>Buscar</button>
               </div>
           </section>
   
           <section id="endereco">
-            <label>endereço</label>
-            <input  name="rua" type="text" id="rua-doador" required size="25" />
+            <label>Endereço</label>
+            <input  name="rua" type="text" id="rua-empresa" required size="25" />
           </section>
         </div>
             
         <div class="dados">
           <section id="numero">
-            <label >número</label>
-            <input type="text" id="numero-doador" name="numero" required>
+            <label >Número</label>
+            <input type="text" id="numero-empresa" name="numero" required>
           </section>
   
           <section id="complemento">
-            <label>complemento</label>
-            <input type="text" id="complemento-doador" name="complemento">
+            <label>Complemento</label>
+            <input type="text" id="complemento-empresa" name="complemento">
           </section>
   
           <section>
-            <label>bairro</label>
-            <input  name="bairro" type="text" id="bairro-doador" required />
+            <label>Bairro</label>
+            <input  name="bairro" type="text" id="bairro-empresa" required />
           </section>
         </div>
       
         <div class="dados">
           <section>
-            <label>cidade</label>
-            <input name="cidade" type="text" id="cidade-doador" required/>
+            <label>Cidade</label>
+            <input name="cidade" type="text" id="cidade-empresa" required/>
           </section>
   
           <section>
-            <label>estado</label>
-            <select id="uf-doador" name="estado" required>
+            <label>Estado</label>
+            <select id="uf-empresa" name="estado" required>
               <option value=""></option>
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
@@ -377,7 +383,7 @@
         </div>
   
         <section class="cadastroBtn">
-          <button type="submit" name="enviar">cadastrar</button>
+          <button type="submit" name="enviar">Cadastrar</button>
         </section>
       </form>
     </div>
@@ -461,10 +467,8 @@
   <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
   <script src="js/integracao-login.js"></script>
   <script src="js/integracao-doador.js"></script>
-
-  <!--
-    <script src="js/integracao-pessoa-juridica.js"></script>
-  -->
+  <script src="js/integracao-pessoa-juridica.js"></script>
+  
 
   
 

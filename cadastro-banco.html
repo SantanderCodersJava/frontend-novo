@@ -27,8 +27,16 @@
   </header>
 
   <main class="cadastro">
+    
+
     <form id="formulario-cadastro" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
       
+      <div class="silhuette-banco">
+        <img id="logo" class="cadphoto" src="img/silhueta.png">
+        <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
+        <label for="imagem" class="photo" name="imagem">Logo</label>
+      </div>
+
       <div>
           <label>nome da instituição</label>
           <input id="nome" type="text" name="nome" placeholder="Banco de Sangue de São Paulo" required>

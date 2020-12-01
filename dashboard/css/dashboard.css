@@ -108,8 +108,8 @@ input, select {
   height: 90px;
 }
 .bloodtype{
-  width: 35px;
-  height: 45px;
+  width: 45px;
+  height: 55px;
 }
 .historicodoador{
  
@@ -532,9 +532,11 @@ img.cadphoto{
   border-radius: 50%;
   border: 1px solid #EE0909;
 }
+/*
 input[type="file"]{
   display: none;
-}
+}*/
+
 label.photo{
       margin-top: 2%;
       margin-left: 35px;
@@ -553,6 +555,7 @@ label.photo{
     background-color: none;
    
 }
+<<<<<<< HEAD
 .dataAgendamento{
   width:200px;
 }
@@ -562,3 +565,9 @@ label.photo{
 .localAgendamento{
   width:65vw;
 }
+=======
+/*
+#agendamentobtn{
+  
+}*/
+>>>>>>> 38c7a8d5fb707bdf8a5591f50df0970727210145

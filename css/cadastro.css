@@ -219,3 +219,49 @@ label[for=naoSei]{
     display: none;
     height: 1000px;
 }
+
+/* estilização envio imagem */
+
+.silhuette{
+    
+    display: flex;
+    width: 20%;
+    height: auto;
+    margin-top: 3%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 600px;
+    bottom: 80px;
+
+}
+
+  img.cadphoto{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 1px solid #EE0909;
+  }
+  
+  input[type="file"]{
+    display: none;
+  }
+
+  label{
+    margin-top: 2%;
+    
+  }
+
+  .silhuette-banco{
+    
+    display: flex;
+    width: 20%;
+    height: auto;
+    margin-top: 3%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 400px;
+
+
+}
