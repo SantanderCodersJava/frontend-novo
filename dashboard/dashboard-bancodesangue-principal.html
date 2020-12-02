@@ -41,7 +41,7 @@
     <hr>
     <section id="mysidenav">
       <img id="imagem" class="silhuette" > 
-      <img id="gotaDoador" class="bloodtype">
+      
      </section>
     <section id="central">
 <!--      
@@ -54,29 +54,293 @@
     </div> -->
 
       <section id="boasvindas">
-        <p>Olá <label id="nomeBanco" class="nomeBanco">Nome do Banco de Sangue</label></p>
+        <p>Olá <label id="nomeBanco" class="nomeBanco"></label></p>
         <p>Confira seu estoque em <button id="#agendar" class="cadastroBtn"  type="button">Estoque Local</button></p>       
         <p>Você tem 23 agendamentos para hoje 00/00/0000</p>
        
       </section>
 
 <section id="painel">
-      <p style="text-align: center;"><h1>Titulo do dashboard</h1></p>
-
-      <button class="accordion">1º accordion</button>
+      <!--
+        <p style="text-align: center;"><h1>Titulo do dashboard</h1></p>
+      -->
+      
+      <button class="accordion">Atualizar dados</button>
      
       <div class="panel">
-        CONTEUDO 1
+        <form id="formulario-cadastro" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
+          <!--
+            <div class="silhuette-banco">
+            <img id="logo" class="cadphoto" src="img/silhueta.png">
+            <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
+            <label for="imagem" class="photo" name="imagem">Logo</label>
+          </div>
+          -->  
+    
+          <div>
+              <label>nome da instituição</label>
+              <input id="nome-banco" type="text" name="nome" placeholder="Banco de Sangue de São Paulo" required>
+          </div>
+    
+          <div class="dados">
+            <section>
+              <label>CNPJ</label>
+              <input id="cnpj-banco" type="text" name="cnpj" placeholder="11.111.111/1111-11">
+            </section>
+             
+            <section> 
+              <label>telefone</label>
+              <input id="telefone-banco" type="tel" name="telefone" placeholder="(00) 0000-0000" required>
+            </section>
+          </div>
+    
+          <div class="dados"> 
+            <section>
+              <label>email institucional</label>
+              <input id="emailinstitucional" type="email" name="emailinstitucional" placeholder="cadastro@bancodesangue.gov.br" required>
+            </section>
+    
+            <section>
+              <label>senha</label>
+              <input class="textboxG" id="senha-banco" type="password" name="senha" required>
+            </section>
+          </div>
+    
+          <div class="dados">
+            <section id="cep">
+              <label>CEP</label>
+                <div id="cepBusca">
+                  <input  name="cep" type="text" id="cep-banco" value="" required size="5"  />
+                  <button>buscar</button>
+                </div>
+            </section>
+    
+            <section id="endereco">
+              <label>endereço</label>
+              <input  name="rua" type="text" id="rua-banco" required size="25" />
+            </section>
+          </div>
+              
+          <div class="dados">
+            <section id="numero">
+              <label >número</label>
+              <input type="text" id="numero-banco" name="numero" required>
+            </section>
+    
+            <section id="complemento">
+              <label>complemento</label>
+              <input type="text" id="complemento-banco" name="complemento">
+            </section>
+    
+            <section>
+              <label>bairro</label>
+              <input  name="bairro" type="text" id="bairro-banco" required />
+            </section>
+          </div>
+        
+          <div class="dados">
+            <section>
+              <label>cidade</label>
+              <input name="cidade" type="text" id="cidade-banco" required/>
+            </section>
+    
+            <section>
+              <label>estado</label>
+              <select id="uf-banco" name="uf" required>
+                <option value=""></option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </section>
+          </div>
+    
+          <p>dados para contato</p>
+          <div>
+            <label>nome</label>
+            <input id="contato" type="text" name="contato"  required>
+          </div>
+          
+          <div class="dados">
+            <section>
+              <label>email</label>
+              <input class="textboxG" id="emailcontato" type="email" name="emailcontato" placeholder="maria@bancodesangue.gov.br">
+            </section>
+    
+            <section id="telefoneContato">
+              <label>telefone</label>
+              <input id="telefonecontato" type="text" name="telefonecontato" placeholder="(00) 0000-0000" required>
+            </section>
+    
+            <section id="cargoContato">
+              <label>cargo</label>
+              <input class="textboxG" id="cargo" type="text" name="cargo">
+            </section>
+          </div>
+    
+          <section class="cadastroBtn">
+            <button type="submit" name="enviar">Atualizar cadastro</button>
+          </section>
+    
+        </form>
       </div>
-      <button class="accordion">2º accordion</button>
+      <button class="accordion">Estoque local</button>
       <div class="panel">
-        CONTEUDO 2
-        </div>
+        <div class="principal">
+          <div class="principal_geral">
+              <div>
+                  <div class="titulo">total de doadores</div>
+                  <p class="valores">000</p>
+              </div>
+              <div>
+                  <div class="titulo">total de doadores</div>
+                  <p class="valores">000</p>
+              </div>
+          </div>
+          <div class="estoque">
+              <div class = "estoque1">
+                  <div class="sangue_nivel">
+                      <img src="img/baixo.png" alt="nível_A+">
+                      <div class="nivel">baixo</div>
+                  </div>
+                  <div class="sangue_nivel">
+                      <img src="img/baixo.png" alt="nível_A+">
+                      <div class="nivel">baixo</div>
+                  </div>
+                  <div class="sangue_nivel">
+                      <img src="img/baixo.png" alt="nível_B+">
+                      <div class="nivel">baixo</div>
+                  </div>
+                  <div class="sangue_nivel">
+                      <img src="img/estavel.png" alt="nível_B-">
+                      <div class="nivel">estável</div>
+                  </div>
+              </div>
+
+              <div class = "estoque2">
+                  <div class="sangue_nivel">
+                      <img src="img/baixo.png" alt="nível_O+">
+                      <div class="nivel">baixo</div>
+                  </div>
+                  <div class="sangue_nivel">
+                      <img src="img/estavel.png" alt="nível_O-">
+                      <div class="nivel">estável</div>
+                  </div>
+                  <div class="sangue_nivel">
+                      <img src="img/bom.png" alt="nível_AB+">
+                      <div class="nivel">bom</div>
+                  </div>
+                  <div class="sangue_nivel">
+                      <img src="img/baixo.png" alt="nível_AB-">
+                      <div class="nivel">baixo</div>
+                  </div>
+              </div>
+             
+              
+          </div>
+         
+      </div>  
+      </div>
 
 
-      <button id="agendamentobtn" class="accordion" name="agendamentobtn">3º accordion</button>
+      <button id="agendamentobtn" class="accordion" name="agendamentobtn">Agendamentos</button>
       <div class="panel">
-     CONTEUDO 3
+        <div class="principal">
+          <section class="section-1"> 
+              <div class="texto-esquerda">
+                  <h3 class="texto-quadro">Confirmados</h3>
+                  <h3>985</h3>
+              </div>
+          </section>
+          <section class="section-2"> 
+              <div class="texto-direita">
+                  <h3 class="texto-quadro">Novos agendamentos</h3>
+              </div>
+              <table class="tabela">
+                  <thead>
+                      <tr>
+                          <th>Doador</th>
+                          <th>Dia</th>
+                          <th>Horário</th>
+                          <th>Sangue</th>
+                          <th class="center">Confirmação</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Steve jobs</td>
+                          <td>27/08/1975</td>
+                          <td>07:00</td>
+                          <td>O+</td>
+                          <td class="center" ><button class="botao-whatsapp" onclick="alert('ola')"><img src="img/whatsapp.png" alt="" srcset=""></button></td>
+                      </tr>
+                      <tr>
+                          <td>Bill Gates</td>
+                          <td>27/08/1975</td>
+                          <td>07:00</td>
+                          <td>AB+</td>
+                          <td class="center" ><button class="botao-whatsapp" onclick="alert('ola')"><img src="img/whatsapp.png" alt="" srcset=""></button></td>                           
+                      </tr>
+                  </tbody>
+              </table>
+          </section>
+          <section class="section-3">
+              <div class="texto-direita">
+                  <h3 class="texto-quadro">Agendamentos Cancelados </h3>
+              </div>              
+              <table class="tabela">
+                  <thead>
+                      <tr>
+                          <th>Doador</th>
+                          <th>Dia</th>
+                          <th>Horário</th>
+                          <th>Sangue</th>
+                          <th class="center">Confirmação</th>
+                      </tr>
+                  </thead>
+                  <tbody class="espaco-linhas">
+                      <tr>
+                          <td>David Chaves Ferreira</td>
+                          <td>14/03/2020</td>
+                          <td>10:45</td>
+                          <td>B+</td>
+                          <td class="center" ><button class="botao-whatsapp" onclick="alert('ola')"><img src="img/whatsapp.png" alt="" srcset=""></button></td>                           
+                      </tr>
+                      <tr>
+                          <td>David Chaves Ferreira</td>
+                          <td>14/03/2020</td>
+                          <td>10:45</td>
+                          <td>B+</td>
+                          <td class="center"><button class="botao-agendar">Remarcado</button></td>
+                      </tr>
+                  </tbody>
+              </table>
+          </section>
+      </div>
       </div>
 
   </section>
@@ -104,8 +368,11 @@
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
-    <script src="./js/integracao-dashboard-doador-meus-dados.js"></script>
+    <!--
+      <script src="./js/integracao-dashboard-doador-meus-dados.js"></script>
+    -->
     <script src="./js/dashboard-doador-principal.js"></script>
+    <script src="./js/integracao-dashboard-banco-dados.js"></script>
     <script>"./js/integracao-agendamento"</script>
     <script src="js/onde-doar.js"></script>
    

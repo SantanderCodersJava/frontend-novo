@@ -32,14 +32,17 @@
       <button class="tablinks" onclick="abrirForm(event, 'pessoaJuridica')">pessoa juridica</button>
     </div>
     
-    <div class="silhuette">
-      <img id="logo" class="cadphoto" src="img/silhueta.png">
-      <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
-      <label for="imagem" class="photo" name="imagem">Foto</label>
-    </div>
+    
 
     <div id="pessoaFisica" class="tabcontent">
+
       <form id="form-cadastro-doador" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
+        <div class="silhuette">
+          <img id="logo" class="cadphoto" src="img/silhueta.png">
+          <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
+          <label for="imagem" class="photo" name="imagem">Foto</label>
+        </div>
+        
         <div>
           <label>Nome</label>
           <input id="nome-doador" type="text" name="nome" placeholder="" required>
