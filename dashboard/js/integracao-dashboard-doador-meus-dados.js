@@ -195,7 +195,7 @@ try{
       baseURL: "http://localhost:8080",
   })
 
-  api.put(`/enderecos/${usuario.enderecos[0].id}`, endereco)
+  api.patch(`/enderecos/${usuario.enderecos[0].id}`, endereco)
   .then(res => {
       alert("Dados atualizados com sucesso!")
   })
