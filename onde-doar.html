@@ -8,7 +8,9 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/home.css">
-    <link href="./css/filtragem.css" rel="stylesheet">
+    <link href="./css/onde-doar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin=""/>
+    
     
 </head>
 <body>
@@ -27,11 +29,22 @@
 
 <main>
   <main role="main">
+    <div>
+      <h1 id="title_onde_doar">encontre o hemocentro</h1>
+      <div id="sub_pin">
+        <h1 id="subtitle_onde_doar">mais próximo <img src="img/pin_3.png" alt="" srcset="" id="pin"></h1>
+        
+      </div>      
+    </div> 
     <!-- Envolve o resto da página em outro container, para centralizar todo o conteúdo. -->
        <div class="content">
-           
+
+               
+       
+        
          <div class="mapa-form">
-           <div id="mapa" ></div>
+          
+           
  
            <div>
             <form id="form-locais-mapa" action="">
@@ -45,27 +58,35 @@
                 <option value="Região Oeste">Região Oeste</option>
                 <option value="Região Centro">Região Centro</option>
               </select>
-               <input type="submit" value="Buscar">
-             </form>
-             <div>
-               <img src="./img/mapasilhueta.svg" alt="" srcset="">
-             </div>
+              <button class="onde_doarBtn" type="submit" name="enviar" value="Buscar">Buscar</button>
+               <!-- <input type="submit" value="Buscar"> -->
+             </form> 
+             <h3 id="ou">OU</h3>
+             <form id="pesquisar-banco" >
+              <input placeholder="Pesquise pelo Nome" type="search" id="input-procurar" > 
+              <button class="onde_doarBtn" id="pesquisar" type="submit" name="enviar" value="Buscar">Buscar</button>
+            </form>
+
            </div>
+
+           
+
+           <div id="mapa" ></div>
              
          </div>
          <div>
  
-           <form id="pesquisar-banco" class="d-flex  justify-content-around">
-             <input placeholder="Search" type="search" id="input-procurar" > 
-             <input value="" type="submit" id="procurar-nome-banco" alt="" srcset="">
-           </form>
+           <!-- <form id="pesquisar-banco" class="d-flex  justify-content-around">
+             <input placeholder="Pesquise pelo Nome" type="search" id="input-procurar" > 
+             <button class="onde_doarBtn" id="pesquisar" type="submit" name="enviar" value="Buscar">Buscar</button>
+           </form> -->
  
            <table>
              <thead>
                <tr>
                  <th>Nome do banco de sangue</th>
                  <th>Rua</th>
-                 <th>Numero</th>
+                 <th>Número</th>
                  <th>Bairro</th>                 
                  <th>Agendar</th>
                </tr>          
@@ -148,9 +169,9 @@
 </main>
 
   <script src="js/home.js"></script>
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""></script>  
-  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>
   <script src="js/integracao-login.js"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""></script>  
+  <script src = "https://unpkg.com/axios/dist/axios.min.js"> </script>  
   <script src="js/onde-doar.js"></script>
 </body>
 </html>
