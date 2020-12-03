@@ -11,6 +11,7 @@
   <link href='https://fonts.googleapis.com/css?family=Paytone One' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/dashboard.css">
  
 
@@ -63,22 +64,59 @@
        
       </section>
 
-<section id="painel">
-      <!--
-        <p style="text-align: center;"><h1>Titulo do dashboard</h1></p>
-      -->
+
+
+      <div class="w3-container">
+        <h2>Não deixe de verificar o seu estoque diariamente</h2>
+      <br /><br />
+      <hr>
+        <div class="w3-row">
+          <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+            <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Tab1</div>
+             </a>
+          <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+            <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Tab2</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+            <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Tab3</div>
+          </a>
+        </div>
       
+        <div id="London" class="w3-container city" style="display:none">
+          <h2>TAB 1</h2>
+       <p>conteudo 1</p>
+        </div>
+      
+        <div id="Paris" class="w3-container city" style="display:none">
+          <h2>TAB 2</h2>
+        <p>conteudo 2</p>
+       
+        </div>
+      
+        <div id="Tokyo" class="w3-container city" style="display:none">
+          <h2>TAB 3</h2>
+        <p>conteudo 3</p>
+        </div>
+      </div>
+
+
+
+
+<!-- 
+
+<section id="painel">
+         
       <button class="accordion">Atualizar dados</button>
      
       <div class="panel">
         <form id="formulario-cadastro" class="cadastroForm" method="POST" action="" enctype="multipart/form-data">
-          <!--
+
             <div class="silhuette-banco">
             <img id="logo" class="cadphoto" src="img/silhueta.png">
             <input id="imagem" type="file"  name="imagem" onchange="previewImagem()" accept="image/*">
             <label for="imagem" class="photo" name="imagem">Logo</label>
           </div>
-          -->  
+         
     
           <div>
               <label>nome da instituição</label>
@@ -354,27 +392,11 @@
       </div>
 
   </section>
-    </section>  <!--central  -->
+    </section> -->
 
   </main>
 
 
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
-  </script>
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
@@ -393,6 +415,31 @@
   }
 </script>
 
+<script>
+  function finalizaLogin() {
+    localStorage.removeItem("__login-info")
+  }
+
+
+
+function openCity(event, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+     tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  event.currentTarget.firstElementChild.className += " w3-border-red";
+}
+
+</script>
+
+
+</html>
 </body>
 
 
