@@ -13,19 +13,19 @@ console.log(larguraDaJanela);
 if(larguraDaJanela <= 768) {
     btnAbrir.addEventListener("click", function openNav() {
         mySidenav.style.width = "180px";
-        principal.style.margin = "0 0 0 200px";
+        //principal.style.margin = "0 0 0 200px";
     });
 }
     if(larguraDaJanela <= 450) {
         btnAbrir.addEventListener("click", function openNav() {
             mySidenav.style.width = "120px";
-            principal.style.margin = "0 0 0 120px";
+            //principal.style.margin = "0 0 0 120px";
         });
     }
         if(larguraDaJanela >= 1200) {
             btnAbrir.addEventListener("click", function openNav() {
                 mySidenav.style.width = "200px";
-                principal.style.margin = "0 0 0 240px";
+                //principal.style.margin = "0 0 0 240px";
                     
             });
         }

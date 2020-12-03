@@ -23,6 +23,9 @@
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
   crossorigin="anonymous"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 
 </head>
 
@@ -201,8 +204,8 @@
             </section>
           </div>
     
-          <section class="cadastroBtn">
-            <button type="submit" name="enviar">Atualizar cadastro</button>
+          <section id="secaoBtnAtualizar">
+            <button class="cadastroBtn type="submit" name="enviar">Atualizar cadastro</button>
           </section>
     
         </form>
@@ -212,11 +215,11 @@
         <div class="principal">
           <div class="principal_geral">
               <div>
-                  <div class="titulo">total de doadores</div>
+                  <div class="titulo">Total de doadores agendados</div>
                   <p class="valores">000</p>
               </div>
               <div>
-                  <div class="titulo">total de doadores</div>
+                  <div class="titulo">Total de bolsas coletadas</div>
                   <p class="valores">000</p>
               </div>
           </div>
@@ -258,21 +261,28 @@
                       <div class="nivel">baixo</div>
                   </div>
               </div>
-             
+              <div>
+                <div class="chart-container">
+                  <div id="titulo_grafico"><p class="título">quantidade de bolsas de sangue X meses </p></div>
+                  <canvas id="grafico_sangue"></canvas>
+              </div> 
+  
+              <div class="chart-container">
+                  <div id="titulo_grafico"><p class="título">agendamentos X meses </p></div>
+                  <canvas id="grafico_agendamento"></canvas>  
+              </div>   
+              </div>
               
-          </div>
+        </div>
          
       </div>  
-      </div>
-
-
       <button id="agendamentobtn" class="accordion" name="agendamentobtn">Agendamentos</button>
       <div class="panel">
         <div class="principal">
           <section class="section-1"> 
               <div class="texto-esquerda">
                   <h3 class="texto-quadro">Confirmados</h3>
-                  <h3>985</h3>
+                  <p class="paragrafo">985</p>
               </div>
           </section>
           <section class="section-2"> 
@@ -373,8 +383,9 @@
     -->
     <script src="./js/dashboard-doador-principal.js"></script>
     <script src="./js/integracao-dashboard-banco-dados.js"></script>
-    <script>"./js/integracao-agendamento"</script>
+    <script src="./js/integracao-agendamento" ></script>
     <script src="js/onde-doar.js"></script>
+    <script src="./js/bolsa_sangue.js"></script>
    
 <script>
   function finalizaLogin(){

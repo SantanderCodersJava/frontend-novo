@@ -566,5 +566,187 @@ label.photo{
   width:65vw;
 }
 
+#secaoBtnAtualizar{
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.center{
+  text-align: center;
+}
 
 
+.principal{
+  width: 90%;
+  margin: auto;
+  transition: padding .5s;
+}
+
+.botao-whatsapp{
+  border: none;
+  outline: 0px;
+  color: #FFF;
+  background-color: #FFFF;
+}
+
+button:focus{
+  outline: 0;
+}
+.section-1 div {
+  margin: 10px;
+}
+.section-1 {
+  display: flex;
+  
+}
+
+.section-1, .section-2, .section-3{
+  width: 100%;
+  padding: 10px;
+  margin: 50px 0px;
+}
+
+
+.texto-direita{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.texto-esquerda{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.texto-quadro{
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  background: #DD0122;
+  color: #FFF;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: lighter;
+
+}
+.tabela{
+  width: 100%;
+  font-size: 16pt;
+}
+
+.tabela tbody tr td{
+  padding: 15px;
+}
+
+.tabela thead tr th{
+  color: #DD0122;
+  margin:  10px;
+  padding: 10px;
+
+}
+
+.botao-agendar{
+  background-color: #DD0122;
+  border-radius: 30px;
+  color: #FFF;
+  padding: 5px;
+  border: none;
+}
+
+.espaco-linhas tr{
+  margin-top: 10px;
+}
+.botao-agendar a{
+  padding: 30px;
+  color: #FFF;
+}
+.botao-agendar a:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+.paragrafo {
+  font-size: 20px;
+}
+
+
+.titulo{
+  background-color: #DD0122;
+
+  width: 220px;
+  height: 55px;
+  padding: 4px;
+  border-radius: 20px;
+
+  color:white;
+  text-align: center;
+}
+.principal_geral{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /*margin-left: 300px; */
+  height: 150px;
+  width: 500px;
+}
+.estoque{
+  margin-top: 20px;
+  /*margin-left:200px; */
+
+}
+.estoque1, .estoque2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 150px;
+  width: 600px;
+}
+.valores{
+  color:grey;
+  font-size: 20px;
+  text-align: end;
+}
+img{
+  height: 100px;
+}
+.nivel{
+  background-color:  #DD0122;
+
+  width: 100px;
+  height: 40px;
+  padding: 6px;
+  border-radius: 20px;
+
+  color:white;
+  text-align: center;
+}
+
+.chart-container{
+  position: relative; 
+
+  height: 50vh;
+  width:40vw;
+  
+  padding: 40px;
+  margin-bottom: 10px;
+}
+#titulo_grafico{
+  background-color: red;
+
+  width: 400px;
+  height:35px;
+  border-radius: 20px;
+  padding: 5px;
+
+  margin-bottom: 25px;
+}
+.título{
+  color: white;
+  font-size: 1em;
+
+  text-align: center;
+}
