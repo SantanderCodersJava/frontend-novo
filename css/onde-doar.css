@@ -81,6 +81,7 @@ main .mapa-form div#mapa{
     border: 1.5px solid #575656;
     border-radius: 30px;
     margin-top: 15px;
+    z-index: 1;
 }
 main .mapa-form{
     display: flex;
