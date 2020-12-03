@@ -23,6 +23,11 @@ try{
     console.log(banco)
 
     document.getElementById("nomeBanco").innerText = banco.nome;
+
+    // SETA A IMAGEM CADASTRADA PELO BANCO
+    const imgLogo = document.getElementById("imagem")
+    imgLogo.setAttribute("src", banco.caminhoImg )
+
   // DADOS BANCO DE SANGUE
 
   document.getElementById("nome-banco").value = banco.nome;
@@ -34,8 +39,9 @@ try{
 
   //DADOS CONTATO
   document.getElementById("contato").value = banco.nomeContato;
-  document.getElementById("telefone-banco").value = banco.telefoneContato;  
-  document.getElementById("emailinstitucional").value = banco.emailContato;
+  document.getElementById("telefone-banco").value = banco.telefoneContato; 
+  document.getElementById("telefonecontato").value = banco.telefoneContato;   
+  document.getElementById("emailcontato").value = banco.email;
   document.getElementById("cargo").value = banco.cargo;
 
   // DADOS DE ENDEREÇO
@@ -48,9 +54,7 @@ try{
   document.getElementById("uf-banco").value = banco.endereco.estado;   
 
 
-  // SETA A IMAGEM CADASTRADA PELO BANCO
-  const imgLogo = document.getElementById("imagem")
-  imgLogo.setAttribute("src", banco.caminhoImg )
+  
 
 }catch(err) {
   console.log(err)
