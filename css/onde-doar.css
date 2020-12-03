@@ -4,10 +4,10 @@ body{
 
 }
 
-#title_onde_doar{
+h1#title_onde_doar{
   color:rgb(197, 26, 44);  
   text-transform: uppercase;
-  font-size: 70px; 
+  font-size: 3rem;
 
   display: flex;  
   text-align: end;
@@ -18,10 +18,10 @@ body{
   padding: 0px;
 }
 
-#subtitle_onde_doar{
+h1#subtitle_onde_doar{
     color:#1c023f;
     text-transform: uppercase;
-    font-size: 70px;
+    font-size: 4rem;
 
     display: flex;
     text-align: end;
@@ -166,9 +166,11 @@ main  div.content table{
 }
 
 main  div.content table thead tr th{
-    color:#1c023f;
+    color:#dd0122;
+    /* color: #1c023f; */
     font-size: 20px;
     text-align: center;
+    font-family: 'Montserrat';
 }
 
 main  div.content table tr td, th{
@@ -179,7 +181,9 @@ main  div.content table tr td, th{
 
 main  div.content table tbody tr{
     background-color: #FFF; 
-    color: #DD0122;
+    color: #1c023f;
+    /* color:#dd0122; */
+    font-family: 'Montserrat';
    
 }
 footer{
