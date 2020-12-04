@@ -192,8 +192,9 @@ label[for=naoSei]{
 
 #dataFundacao{width: 40%;}
 
-#cnpj, #ie{width: 70%;}
+#cnpj, #ie{width: 25%;}
 
+#cnpjBanco, #telefoneBanco{width: 70%;}
 
 .pessoaTipo {
     overflow: hidden;
@@ -226,13 +227,13 @@ label[for=naoSei]{
     
     display: flex;
     width: 20%;
-    height: auto;
+
     margin-top: 3%;
     flex-direction: column;
     align-items: center;
     position: relative;
-    left: 400px;
-    bottom: 60px;
+    left: 250px;
+    bottom: 20px;
 
 }
 
@@ -247,13 +248,7 @@ label[for=naoSei]{
     display: none;
   }
 
-  label{
-    margin-top: 2%;
-    
-  }
-
-  .silhuette-banco{
-    
+.silhuette-banco{
     display: flex;
     width: 20%;
     height: auto;
@@ -262,6 +257,4 @@ label[for=naoSei]{
     align-items: center;
     position: relative;
     left: 400px;
-
-
 }

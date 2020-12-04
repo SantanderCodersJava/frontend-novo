@@ -64,7 +64,7 @@ input, select {
 #navbar {
   position: fixed; 
   width: 100%;
-  z-index: 99;
+  z-index: 3;
   overflow: hidden;
 
   top: 0; 
@@ -121,7 +121,7 @@ main{
   align-items: baseline;
 }
 
-img{
+.doadorBraco{
   height: 100%;
   opacity: 0.9;
 }
@@ -219,20 +219,17 @@ p{
 }
 
 #requisitos{
+  top: 50px;
   font-size: 18px;
 }
 
-footer{
-  height: 8vh;
-  background-color: #DD0122;
-  color: #FFFF;
-}
+
 
 /*modal para o cadastro de doador ou de banco de sangue*/
 #modalCadastro{
   display: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 4; 
 
   padding-top: 200px; 
   left: 0;
@@ -290,7 +287,7 @@ footer{
 #modalLogin {
   display: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 4; 
       
   padding-top: 100px; 
   left: 0;
@@ -398,4 +395,28 @@ div.socialTitulo {
   margin: 0px 0px;
 }
 
-  
+footer{
+  margin-top: 20px;
+  height: 10vh;
+  background-color: #DD0122;
+  color: #FFFF;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contatoEquipe{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 25%;
+}
+.contatoEquipe img{
+  height:100%;
+}
+h5{
+  font-family: 'Paytone One';
+  margin-right: 10px;
+  text-align: center;
+  font-size: 15px;
+}

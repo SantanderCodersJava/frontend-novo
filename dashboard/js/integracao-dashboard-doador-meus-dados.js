@@ -155,7 +155,7 @@ try{
 
 
   // ATUALIZA OS DADOS DO DOADOR
-  document.getElementById("form-atualizar-dados-doador").onsubmit = (event) => {
+  document.getElementById("form-dados-doador").onsubmit = (event) => {
 
     event.preventDefault();
 
@@ -177,7 +177,7 @@ try{
             id : usuario.id,
             nome : nome.value,
             rg : rg.value,
-            dataNascimento : date.value,
+            dataNascimento : '2020-01-01',
             email : email.value,
             cpf : cpf.value,
             telefone : telefone.value,
@@ -191,9 +191,9 @@ try{
   
     console.log(endereco)
   // FAÇO A REQUISIÇÃO
-  // api = axios.create({
-  //    baseURL: "http://localhost:8080",
-  //})
+  const api = axios.create({
+      baseURL: "http://localhost:8080",
+  })
 
   api.put(`/enderecos/${usuario.enderecos[0].id}`, endereco)
   .then(res => {
@@ -201,7 +201,6 @@ try{
   })
   .catch(err => {
       alert("Erro ao alterar");
-      console.log(err)
   })
 
 }

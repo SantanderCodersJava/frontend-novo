@@ -104,12 +104,12 @@ input, select {
 }
 
 .silhuette{
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
 }
 .bloodtype{
-     width: 65px;
-    height: 75px;
+  width: 45px;
+  height: 55px;
 }
 .historicodoador{
  
@@ -272,9 +272,6 @@ main{
   height: 100vh;
   padding: 10px;
   margin-top: -15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   /* background-color:rgb(14, 187, 58); */
 }
 #painel{
@@ -498,13 +495,6 @@ select{width: 70%;}
   min-height: 100px auto;
 }
 .nomeDoador{
-  font-weight: bold;
-  font: 1em sans-serif;
-  text-transform: uppercase;
-  color: #DD0122;
-}
-
-.nomeBanco {
   font-weight: bold;
   font: 1em sans-serif;
   text-transform: uppercase;

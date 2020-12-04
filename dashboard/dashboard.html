@@ -57,14 +57,14 @@
 
       <section id="boasvindas">
         <p>Olá <label id="nomeDoador" class="nomeDoador"></label> sua última doação foi em <label id="dataDoacao"
-            class="dataDoacao">05/09/2020</label></p>
-        <p>Você poderá doar novamente a partir de 05/12/2020</p>
+            class="dataDoacao">05/09/2019</label></p>
+        <p>Você poderá doar novamente a partir de 00/00/0000</p>
         <p>Ou <button id="#agendar" class="cadastroBtn" onclick="agendamento()" type="button">Agendar Doação</button>
           agora mesmo.</p>
       </section>
 
       <div class="w3-container">
-        <h2>Seu histórico de doações está aqui</h2>
+        <h2>Seu Histórico de doações esta aqui</h2>
       <br /><br />
       <hr>
         <div class="w3-row">
@@ -188,9 +188,8 @@
       
         <div id="Tokyo" class="w3-container city" style="display:none">
           <h2>Atualizar Cadastro</h2>
-          <form id="form-atualizar-dados-doador" method="GET" action="" enctype="multipart/form-data">
+          <form id="form-dados-doador" method="POST" action="" enctype="multipart/form-data">
 
-            
             <p>dados pessoais</p>
             <div>
               <label>nome</label>
@@ -212,7 +211,7 @@
             <div class="dados">
               <section id="data">
                 <label>data de nascimento</label>
-                <input id="dt-nasc-doador" type="datetime" name="dataNascimento" required>
+                <input id="dt-nasc-doador" type="text" name="dataNascimento" required>
               </section>
 
               <section>

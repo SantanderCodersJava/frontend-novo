@@ -41,7 +41,7 @@ try{
   document.getElementById("contato").value = banco.nomeContato;
   document.getElementById("telefone-banco").value = banco.telefoneContato; 
   document.getElementById("telefonecontato").value = banco.telefoneContato;   
-  document.getElementById("emailcontato").value = banco.emailContato;
+  document.getElementById("emailcontato").value = banco.email;
   document.getElementById("cargo").value = banco.cargo;
 
   // DADOS DE ENDEREÇO
