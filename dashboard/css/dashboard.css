@@ -108,7 +108,7 @@ input, select {
   height: 90px;
 }
 .bloodtype{
-  width: 45px;
+  width: 60px;
   height: 55px;
 }
 .historicodoador{
@@ -272,6 +272,9 @@ main{
   height: 100vh;
   padding: 10px;
   margin-top: -15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* background-color:rgb(14, 187, 58); */
 }
 #painel{
@@ -756,4 +759,10 @@ img{
   font-size: 1em;
 
   text-align: center;
+}
+
+
+.img-nivel {
+  width: 120px;
+  height: 150px;
 }

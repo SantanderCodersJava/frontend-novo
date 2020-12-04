@@ -118,35 +118,35 @@ try{
 
   switch(tipoSangue) {
     case 'APOSITIVO': 
-      imgTipoSangue.setAttribute("src", '../img/Apositive.png')
+      imgTipoSangue.setAttribute("src", '../img/Apos.png')
       break;
 
     case 'ANEGATIVO':
-      imgTipoSangue.setAttribute("src", '../img/Anegative.png')
+      imgTipoSangue.setAttribute("src", '../img/Aneg.png')
       break;
 
     case 'BPOSITIVO':
-      imgTipoSangue.setAttribute("src", '../img/Bpositive.png')
+      imgTipoSangue.setAttribute("src", '../img/Bpos.png')
       break;
 
     case 'BNEGATIVO':
-      imgTipoSangue.setAttribute("src", '../img/Bnegative.png')
+      imgTipoSangue.setAttribute("src", '../img/Bneg.png')
       break;
 
     case 'ABPOSITIVO':
-      imgTipoSangue.setAttribute("src", '../img/ABpositive.png')
+      imgTipoSangue.setAttribute("src", '../img/ABpos.png')
       break;
 
     case 'ABNEGATIVO':
-      imgTipoSangue.setAttribute("src", '../img/ABnegative.png')
+      imgTipoSangue.setAttribute("src", '../img/ABneg.png')
       break;
 
     case 'OPOSITIVO':
-      imgTipoSangue.setAttribute("src", '../img/Opositive.png')
+      imgTipoSangue.setAttribute("src", '../img/Opos.png')
       break;
       
     case 'ONEGATIVO':
-      imgTipoSangue.setAttribute("src", '../img/Onegative.png')
+      imgTipoSangue.setAttribute("src", '../img/Oneg.png')
       break;
 
     default:
