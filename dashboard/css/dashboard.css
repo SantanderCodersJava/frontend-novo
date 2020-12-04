@@ -501,6 +501,13 @@ select{width: 70%;}
   color: #DD0122;
 }
 
+.nomeBanco{
+  font-weight: bold;
+  font: 1em sans-serif;
+  text-transform: uppercase;
+  color: #DD0122;
+}
+
 
 /* ................................................SILHUETA */
 
